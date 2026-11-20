@@ -208,3 +208,14 @@ print("Distribuição de páginas:")
 print(df["qtd_paginas"].value_counts().sort_index())
 
 print("Média de autores por artigo:", df["qtd_autores"].mean())
+
+df_csv = df.copy()
+df_csv["autores"] = df["autores"].str.join("; ")
+df_csv["palavras_chave"] = df["palavras_chave"].str.join("; ")
+
+df_csv.to_csv("dataset_artigos.csv", index=False, encoding="utf-8")
+
+df_lido = pd.read_csv("dataset_artigos.csv")
+print(df_lido.shape)
+print(df_lido.columns.tolist())
+print(df_lido.loc[0, "autores"])
