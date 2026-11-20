@@ -1,5 +1,7 @@
 import os
 import pdfplumber
+import re
+import unicodedata
 
 pasta = "artigos"
 
@@ -38,3 +40,22 @@ for caminho in arquivos:
 
 for nome in textos:
     print(nome[:4], "-", qtd_paginas[nome], "páginas -", len(textos[nome]), "caracteres")
+
+textos_limpos = {}
+
+for nome, texto in textos.items():
+    texto = unicodedata.normalize("NFKC", texto)
+    texto = re.sub(r"[\ue000-\uf8ff\ufffd]", "", texto)
+    texto = re.sub(r"([a-z])-\n([a-z])", r"\1\2", texto)
+    texto = re.sub(r"[ \t]+", " ", texto)
+
+    linhas = []
+    for linha in texto.split("\n"):
+        linha = linha.strip()
+        if linha != "":
+            linhas.append(linha)
+
+    textos_limpos[nome] = "\n".join(linhas)
+
+for nome in textos:
+    print(nome[:4], "-", len(textos[nome]), "->", len(textos_limpos[nome]), "caracteres")
