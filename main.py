@@ -104,3 +104,54 @@ for nome, d in dados.items():
     print(nome[:4], "|", d["titulo"])
     print("   ", d["ano"], d["periodico"], "|", len(d["autores"]), "autores")
     print("   ", d["palavras_chave"])
+
+def so_titulos(obj):
+    return obj["object_type"] != "char" or ("Bold" in obj["fontname"] and obj["size"] > 12)
+
+secoes = {}
+
+for caminho in arquivos:
+    nome = os.path.basename(caminho)
+    lista = []
+
+    with pdfplumber.open(caminho) as pdf:
+        for i, pagina in enumerate(pdf.pages):
+            if i == 0:
+                partes = [pagina]
+            else:
+                meio = pagina.width / 2
+                partes = [pagina.crop((0, 65, meio, pagina.height)), pagina.crop((meio, 65, pagina.width, pagina.height))]
+
+            for parte in partes:
+                titulos = parte.filter(so_titulos)
+                texto = titulos.extract_text(x_tolerance=1.5) or ""
+                for linha in texto.split("\n"):
+                    for pedaco in re.split(r" (?=\d{1,2} [A-Z])", linha):
+                        if re.match(r"\d{1,2} [A-Z]", pedaco):
+                            lista.append(pedaco)
+
+    secoes[nome] = lista
+
+fins = ["Acknowledgements", "Acknowledgments", "Funding", "Authors’ Contributions", "Competing interests", "Availability of data and materials", "Declarations", "References", "REFERENCES"]
+
+conclusoes = {}
+
+for nome, texto in textos_limpos.items():
+    linhas = texto.split("\n")
+
+    inicio = None
+    for i, linha in enumerate(linhas):
+        if re.match(r"^\d+ Conclusion", linha):
+            inicio = i
+            break
+
+    fim = len(linhas)
+    for i in range(inicio + 1, len(linhas)):
+        if linhas[i] in fins:
+            fim = i
+            break
+
+    conclusoes[nome] = " ".join(linhas[inicio + 1:fim])
+
+for nome in textos_limpos:
+    print(nome[:4], "-", len(secoes[nome]), "seções -", len(conclusoes[nome].split()), "palavras na conclusão")
