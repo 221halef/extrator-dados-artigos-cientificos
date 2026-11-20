@@ -3,6 +3,7 @@ import pdfplumber
 import re
 import unicodedata
 import pandas as pd
+from collections import Counter
 
 pasta = "artigos"
 
@@ -182,3 +183,28 @@ df = pd.DataFrame(linhas_df)
 
 print(df.shape)
 print(df[["ano", "qtd_autores", "qtd_paginas", "qtd_caracteres", "qtd_palavras", "qtd_secoes"]])
+
+tamanhos = df["resumo"].str.split().str.len()
+posicao = tamanhos.idxmax()
+print("Artigo com maior resumo:", df.loc[posicao, "titulo"])
+print("Palavras no resumo:", tamanhos[posicao])
+
+print("Média de palavras por artigo:", round(df["qtd_palavras"].mean(), 1))
+
+stopwords = ["the", "and", "for", "that", "with", "this", "are", "from", "was", "were", "have", "has", "had", "can", "which", "also", "such", "been", "their", "these", "our", "not", "but", "its", "may", "than", "then", "when", "where", "each", "both", "other", "more", "most", "into", "between", "through", "over", "only", "all", "any", "one", "two", "will", "would", "could", "should", "while", "however", "they", "them", "there", "those", "about", "after", "before", "does", "did", "being", "how", "what", "who", "whose", "per", "via", "et", "fig", "figure", "table", "used", "using", "use", "based", "result", "results"]
+
+contagem = Counter()
+for texto in textos_limpos.values():
+    sem_referencias = texto.split("\nReferences\n")[0]
+    for palavra in re.findall(r"[a-z]{3,}", sem_referencias.lower()):
+        if palavra not in stopwords:
+            contagem[palavra] += 1
+
+print("Palavras mais frequentes:")
+for palavra, qtd in contagem.most_common(15):
+    print("  ", palavra, qtd)
+
+print("Distribuição de páginas:")
+print(df["qtd_paginas"].value_counts().sort_index())
+
+print("Média de autores por artigo:", df["qtd_autores"].mean())
