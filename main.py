@@ -2,6 +2,7 @@ import os
 import pdfplumber
 import re
 import unicodedata
+import pandas as pd
 
 pasta = "artigos"
 
@@ -155,3 +156,29 @@ for nome, texto in textos_limpos.items():
 
 for nome in textos_limpos:
     print(nome[:4], "-", len(secoes[nome]), "seções -", len(conclusoes[nome].split()), "palavras na conclusão")
+
+linhas_df = []
+
+for nome in textos_limpos:
+    texto = " ".join(textos_limpos[nome].split())
+    d = dados[nome]
+
+    linhas_df.append({
+        "titulo": d["titulo"],
+        "autores": d["autores"],
+        "periodico": d["periodico"],
+        "ano": d["ano"],
+        "resumo": d["resumo"],
+        "conclusao": conclusoes[nome],
+        "palavras_chave": d["palavras_chave"],
+        "qtd_autores": len(d["autores"]),
+        "qtd_paginas": qtd_paginas[nome],
+        "qtd_caracteres": len(texto),
+        "qtd_palavras": len(texto.split()),
+        "qtd_secoes": len(secoes[nome]),
+    })
+
+df = pd.DataFrame(linhas_df)
+
+print(df.shape)
+print(df[["ano", "qtd_autores", "qtd_paginas", "qtd_caracteres", "qtd_palavras", "qtd_secoes"]])
