@@ -59,3 +59,48 @@ for nome, texto in textos.items():
 
 for nome in textos:
     print(nome[:4], "-", len(textos[nome]), "->", len(textos_limpos[nome]), "caracteres")
+
+dados = {}
+
+for nome, texto in textos_limpos.items():
+    linhas = texto.split("\n")
+
+    busca = re.match(r"(.*?), (\d{4}),", linhas[0])
+    periodico = busca.group(1)
+    ano = int(busca.group(2))
+
+    titulo = []
+    i = 2
+    while "[" not in linhas[i]:
+        titulo.append(linhas[i])
+        i += 1
+    titulo = " ".join(titulo)
+
+    autores = []
+    while "[" in linhas[i]:
+        nome_autor = linhas[i].split(" [")[0]
+        nome_autor = re.sub(r"\d+$", "", nome_autor)
+        autores.append(nome_autor)
+        i += 1
+
+    busca = re.search(r"Published:[^\n]*\n(.*?)Keywords", texto, re.S)
+    resumo = " ".join(busca.group(1).split())
+    resumo = re.sub(r"^Abstract\s*", "", resumo)
+
+    busca = re.search(r"Keywords:?\s*(.*?)\s*\n1\s+Introduction", texto, re.S)
+    palavras = " ".join(busca.group(1).split()).rstrip(".,")
+    palavras_chave = [p.strip() for p in palavras.split(",")]
+
+    dados[nome] = {
+        "titulo": titulo,
+        "autores": autores,
+        "periodico": periodico,
+        "ano": ano,
+        "resumo": resumo,
+        "palavras_chave": palavras_chave,
+    }
+
+for nome, d in dados.items():
+    print(nome[:4], "|", d["titulo"])
+    print("   ", d["ano"], d["periodico"], "|", len(d["autores"]), "autores")
+    print("   ", d["palavras_chave"])
