@@ -29,8 +29,8 @@ for caminho in arquivos:
                 texto = pagina.extract_text(x_tolerance=1.5) or ""
             else:
                 meio = pagina.width / 2
-                esquerda = pagina.crop((0, 0, meio, pagina.height))
-                direita = pagina.crop((meio, 0, pagina.width, pagina.height))
+                esquerda = pagina.crop((0, 65, meio, pagina.height))
+                direita = pagina.crop((meio, 65, pagina.width, pagina.height))
                 texto = (esquerda.extract_text(x_tolerance=1.5) or "") + "\n" + (direita.extract_text(x_tolerance=1.5) or "")
             partes.append(texto)
 
