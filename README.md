@@ -54,9 +54,20 @@ O arquivo `dataset_artigos.csv` tem 10 linhas (uma por artigo) e 12 colunas:
 1. Clone o repositório e entre na pasta:
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/221halef/extrator-dados-artigos-cientificos.git
+
+
 cd extrator-dados-artigos-cientificos
 ```
+ou
+
+```bash
+git clone git@github.com:221halef/extrator-dados-artigos-cientificos.git
+
+
+cd extrator-dados-artigos-cientificos
+```
+
 
 2. (Opcional, recomendado) Crie e ative um ambiente virtual:
 
@@ -67,14 +78,10 @@ source .venv/bin/activate
 
 No Windows, a ativação é `.venv\Scripts\activate`.
 
-3. Instale as dependências, uma de cada vez:
+3. Instale as dependências:
 
 ```bash
-pip install pdfplumber
-```
-
-```bash
-pip install pandas
+pip install pdfplumber pandas
 ```
 
 ## Como executar
@@ -142,3 +149,4 @@ Todos os artigos foram publicados no **Journal of Information and Data Managemen
 - [pdfplumber](https://github.com/jsvine/pdfplumber): leitura de PDFs e extração de texto.
 - [pandas](https://pandas.pydata.org/): construção do DataFrame, análise e exportação do CSV.
 - Biblioteca padrão do Python: `os`, `re`, `unicodedata` e `collections`.
+

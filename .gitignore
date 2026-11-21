@@ -1,0 +1,15 @@
+# Ambiente virtual
+.venv/
+venv/
+
+# Dataset gerado (o notebook recria o arquivo ao ser executado)
+*.csv
+
+# Cache do Python e do Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
