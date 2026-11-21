@@ -131,22 +131,23 @@ O programa mostra no terminal cada etapa (PDFs encontrados, contagem de caracter
 
 Todos os artigos foram publicados no **Journal of Information and Data Management (JIDM), vol. 17, nº 1, 2026**, e estão sob a licença **[Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)**, que permite copiar e redistribuir o material desde que haja crédito aos autores. Os PDFs foram incluídos neste repositório **sem nenhuma alteração**, e os direitos sobre os artigos continuam com seus autores.
 
+O título de cada artigo leva à sua página no site do JIDM. O DOI é o impresso no cabeçalho do próprio PDF. Alguns DOIs ainda podem não ser reconhecidos pelo `doi.org`, por isso o link usado é o da página do periódico.
+
 | Artigo | Autores | DOI |
 |---|---|---|
-| Leveraging LLMs for Topic Modeling and Classification in Brazilian Funk Lyrics | Jesus Daniel Yepez Rojas, Bruno Tavares Santos, Fabíola de Carvalho Leite Peres, Karin Becker | [10.5753/jidm.2026.5578](https://doi.org/10.5753/jidm.2026.5578) |
-| Incremental Schema Evolution in Document-oriented Databases | Eleonília Monteiro Rodrigues, Carlos Eduardo S. Pires, Dimas Cassimiro do N. Filho | [10.5753/jidm.2026.5700](https://doi.org/10.5753/jidm.2026.5700) |
-| HDP+: Leveraging Anomaly and Change Point Detection for Pump-and-Dump in Cryptocurrency Exchanges | Matheus S. Moura, Laís Baroni, Eduardo Ogasawara, Diogo S. Mendonça | [10.5753/jidm.2026.5728](https://doi.org/10.5753/jidm.2026.5728) |
-| From Legacy to Modern Systems: An Enterprise-ready Workflow for Database Migrations | Gustavo Moraes, Victor Misael, Angelo Brayner | [10.5753/jidm.2026.5730](https://doi.org/10.5753/jidm.2026.5730) |
-| Evaluating Data Drift Detection and Its Effects on Machine Learning System Performance | Lucas Helfstein Rocha, Kelly Rosa Braghetto | [10.5753/jidm.2026.5738](https://doi.org/10.5753/jidm.2026.5738) |
-| Characterizing the Socioenvironmental and Behavioral Profile of Individuals with OCD Using the PNS 2019 Database | Anna Puga Campos Rodrigues, Luis Enrique Zárate | [10.5753/jidm.2026.5780](https://doi.org/10.5753/jidm.2026.5780) |
-| A heuristic Data-Centric AI approach to predict non-contact injuries in elite football players | Matheus Santos Melo, Juliano Spineti, Diego Nunes Brandão, Lucas Giusti Tavares, Jorge de Abreu Soares | [10.5753/jidm.2026.5855](https://doi.org/10.5753/jidm.2026.5855) |
-| Incorporating LGPD Requirements and Restrictions into Database Design | Patrícia Vieira, José Maria Monteiro, Javam Machado, Angelo Brayner | [10.5753/jidm.2026.5859](https://doi.org/10.5753/jidm.2026.5859) |
-| POI Type Embedding Techniques for Recommendation Systems: A Comparative Analysis | Diogo Alves Silveira, Salatiel Dantas Silva, Nícolas Moreira Nobre Leite, Claudio E. C. Campelo | [10.5753/jidm.2026.5929](https://doi.org/10.5753/jidm.2026.5929) |
-| How Effectively Do LLMs Automate Data Analysis? A Comparative Study with ChatGPT’s Data Analyst, Grok, and Qwen | Carlos D. S. Nogueira, Darlan S. Almeida, Beatriz A. de Miranda, Claudio E. C. Campelo | [10.5753/jidm.2026.5963](https://doi.org/10.5753/jidm.2026.5963) |
+| [Leveraging LLMs for Topic Modeling and Classification in Brazilian Funk Lyrics](https://journals-sol.sbc.org.br/index.php/jidm/article/view/5578) | Jesus Daniel Yepez Rojas, Bruno Tavares Santos, Fabíola de Carvalho Leite Peres, Karin Becker | 10.5753/jidm.2026.5578 |
+| [Incremental Schema Evolution in Document-oriented Databases](https://journals-sol.sbc.org.br/index.php/jidm/article/view/5700) | Eleonília Monteiro Rodrigues, Carlos Eduardo S. Pires, Dimas Cassimiro do N. Filho | 10.5753/jidm.2026.5700 |
+| [HDP+: Leveraging Anomaly and Change Point Detection for Pump-and-Dump in Cryptocurrency Exchanges](https://journals-sol.sbc.org.br/index.php/jidm/article/view/5728) | Matheus S. Moura, Laís Baroni, Eduardo Ogasawara, Diogo S. Mendonça | 10.5753/jidm.2026.5728 |
+| [From Legacy to Modern Systems: An Enterprise-ready Workflow for Database Migrations](https://journals-sol.sbc.org.br/index.php/jidm/article/view/5730) | Gustavo Moraes, Victor Misael, Angelo Brayner | 10.5753/jidm.2026.5730 |
+| [Evaluating Data Drift Detection and Its Effects on Machine Learning System Performance](https://journals-sol.sbc.org.br/index.php/jidm/article/view/5738) | Lucas Helfstein Rocha, Kelly Rosa Braghetto | 10.5753/jidm.2026.5738 |
+| [Characterizing the Socioenvironmental and Behavioral Profile of Individuals with OCD Using the PNS 2019 Database](https://journals-sol.sbc.org.br/index.php/jidm/article/view/5780) | Anna Puga Campos Rodrigues, Luis Enrique Zárate | 10.5753/jidm.2026.5780 |
+| [A heuristic Data-Centric AI approach to predict non-contact injuries in elite football players](https://journals-sol.sbc.org.br/index.php/jidm/article/view/5855) | Matheus Santos Melo, Juliano Spineti, Diego Nunes Brandão, Lucas Giusti Tavares, Jorge de Abreu Soares | 10.5753/jidm.2026.5855 |
+| [Incorporating LGPD Requirements and Restrictions into Database Design](https://journals-sol.sbc.org.br/index.php/jidm/article/view/5859) | Patrícia Vieira, José Maria Monteiro, Javam Machado, Angelo Brayner | 10.5753/jidm.2026.5859 |
+| [POI Type Embedding Techniques for Recommendation Systems: A Comparative Analysis](https://journals-sol.sbc.org.br/index.php/jidm/article/view/5929) | Diogo Alves Silveira, Salatiel Dantas Silva, Nícolas Moreira Nobre Leite, Claudio E. C. Campelo | 10.5753/jidm.2026.5929 |
+| [How Effectively Do LLMs Automate Data Analysis? A Comparative Study with ChatGPT’s Data Analyst, Grok, and Qwen](https://journals-sol.sbc.org.br/index.php/jidm/article/view/5963) | Carlos D. S. Nogueira, Darlan S. Almeida, Beatriz A. de Miranda, Claudio E. C. Campelo | 10.5753/jidm.2026.5963 |
 
 ## Bibliotecas utilizadas
 
 - [pdfplumber](https://github.com/jsvine/pdfplumber): leitura de PDFs e extração de texto.
 - [pandas](https://pandas.pydata.org/): construção do DataFrame, análise e exportação do CSV.
 - Biblioteca padrão do Python: `os`, `re`, `unicodedata` e `collections`.
-
